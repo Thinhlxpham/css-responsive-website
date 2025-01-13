@@ -4,9 +4,6 @@
   * Add the media rule and the styles that belong to the MOBILE view only
 */
 
-/*All file are update but when I run assignment some of them give trouble not like what we want, so can you help me to figure out that.
-Thanks!*/
-
 /*defaul desktop device*/
 * {
   box-sizing: border-box;
@@ -29,7 +26,7 @@ body {
 }
 button,
 .trigram {
-  visibility: hidden;
+  display: none;
 }
 
 .teammates-list {
@@ -41,26 +38,11 @@ button,
 }
 /*tablet device view setting*/
 @media (max-width: 768px) {
-  button,
   .trigram {
     display: flex;
     justify-content: flex-end;
   }
-  ul,
-  li,
-  a {
-    visibility: hidden;
-    clear: both;
-    float: left;
-    margin: 10px auto 5px 20px;
-    width: 28%;
-    display: none;
-  }
-  .social-icons {
-    color: white;
-  }
-  .top-navigation,
-  ul {
+  .top-navigation ul {
     display: none;
   }
   .portfolio-list {
@@ -82,26 +64,48 @@ button,
     display: none;
     visibility: hidden;
   }
-  .teammate-data,
-  .teammate-social {
-    display: flex;
-    justify-content: center;
+  .teammates-list-wrapper {
+    width: 600px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
   }
-  footer .social-icons div {
+  .teammate-img-wrapper {
+    width: 100%;
+  }
+  .teammate {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 250px;
+    height: auto;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+  .social-icons span {
     display: none;
   }
-  footer.social-icons {
-    color: #fff;
-    flex-direction: row;
+  .social-icons .icon {
+    background-color: #fff;
+    padding: 8px;
   }
-  .footer-contacts {
-    gap: 40px;
+  footer .footer-contacts {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+    gap: 30px;
   }
 }
 /*mobile device view */
 @media (max-width: 375px) {
+  .section-info {
+    margin: 0 auto;
+    padding: 0 auto;
+    position: relative;
+    top: 0 auto;
+  }
   .portfolio-item {
     flex-direction: column;
   }
@@ -111,22 +115,27 @@ button,
   .footer-contacts {
     flex-direction: column;
   }
-  .teammates-list {
+
+  .teammates-list-wrapper {
     flex-direction: column;
   }
-  .teammate-data,
-  .teammate-social {
+  .teammates {
+    display: flex;
     flex-direction: row;
+    border: 1px solid black;
   }
-  .social-icons,
-  div {
+  .social-icons {
+    flex-direction: column;
     color: #fff;
+  }
+  .social-icons span {
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+  }
+  footer .footer-contacts {
     display: flex;
     flex-direction: column;
-  }
-  .footer-contacts {
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
   }
 }
